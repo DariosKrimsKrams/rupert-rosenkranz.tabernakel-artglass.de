@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tabernakel-artglass.de": {
+    "rupert-rosenkranz.de": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tabernakel-artglass.de",
+            "outputPath": "dist/rupert-rosenkranz",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -58,10 +58,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tabernakel-artglass.de:build:production"
+              "buildTarget": "rupert-rosenkranz.de:build:production"
             },
             "development": {
-              "buildTarget": "tabernakel-artglass.de:build:development"
+              "buildTarget": "rupert-rosenkranz.de:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -69,7 +69,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "tabernakel-artglass.de:build"
+            "buildTarget": "rupert-rosenkranz.de:build"
           }
         },
         "test": {
