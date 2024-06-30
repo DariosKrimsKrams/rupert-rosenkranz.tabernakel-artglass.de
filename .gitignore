@@ -5,7 +5,6 @@
 /tmp
 /out-tsc
 /bazel-out
-.vscode
 
 # Node
 /node_modules
@@ -22,6 +21,7 @@ yarn-error.log
 *.sublime-workspace
 
 # Visual Studio Code
+/.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
