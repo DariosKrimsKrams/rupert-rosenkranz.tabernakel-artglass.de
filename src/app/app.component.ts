@@ -5,5 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'rupert-rosenkranz.de';
+  onActivate(event: any) {
+    window.scroll(0,0);
+ }
 }

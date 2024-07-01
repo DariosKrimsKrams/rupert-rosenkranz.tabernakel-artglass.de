@@ -1,24 +1,3 @@
-<div class="w-full h-24 bg-gradient-to-b from-[#981F24] to-[#510A12] text-white text-center text-5xl pt-4">Rupert Rosenkranz</div>
-
-<button (click)="isMobileMenuActive = !isMobileMenuActive" type="button" class="z-20 sm:hidden fixed top-4 left-4 w-8 bg-gray-300/50 rounded " aria-expanded="false" [attr.aria-expanded]="isMobileMenuActive ? 'true' : 'false'">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-  </svg>
-</button>
-
-<nav class="bg-amber-200 bg-shadow">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 hidden sm:block">
-    <div class="flex h-16 justify-between">
-      <div class="sm:ml-6 sm:flex sm:space-x-8">
-        <a [routerLink]="page.link" *ngFor="let page of navi" class="inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium" [ngClass]="{'border-indigo-500 text-gray-900': router.url === page.link, 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700': router.url !== page.link }" [innerHTML]="page.name"></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="sm:hidden fixed left-0 right-0 top-0 bottom-0 bg-white z-10" *ngIf="isMobileMenuActive">
-    <div class="w-full h-32 bg-center bg-cover" style="background-image: url('./assets/header.jpg')"></div>
-    <div class="space-y-1 pb-3 pt-2">
-      <a [routerLink]="page.link" (click)="isMobileMenuActive = false" *ngFor="let page of navi" class="block border-l-4 py-2 pl-3 pr-4 text-base font-medium" [ngClass]="{'bg-indigo-50 border-indigo-500 text-indigo-700': router.url === page.link, 'border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700': router.url !== page.link }">{{ page.name }}</a>
-    </div>
-  </div>
-</nav>
+<div class="w-full h-24 bg-gradient-to-b from-[#981F24] to-[#510A12] text-white text-center">
+  <h1 class="text-3xl sm:text-5xl pt-6">Rupert Rosenkranz</h1>
+</div>

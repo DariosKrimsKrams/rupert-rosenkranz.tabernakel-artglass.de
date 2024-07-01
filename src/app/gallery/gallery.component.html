@@ -1,9 +1,9 @@
 
 <ul role="list" class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8 my-4">
   <li class="relative" *ngFor="let image of images">
-    <div class="group aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-      <img [src]="image.path" alt="" class="pointer-events-none object-cover group-hover:opacity-75 w-full">
-      <button type="button" class="absolute inset-0 focus:outline-none" (click)="currentImage = image">
+    <div class="group aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-yellow-400 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+      <img [src]="image.path" alt="" class="pointer-events-none object-cover sm:group-hover:opacity-75 w-full">
+      <button type="button" class="hidden sm:block absolute inset-0 focus:outline-none" (click)="currentImage = image">
       </button>
     </div>
     <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">{{image.name}}</p>
@@ -11,33 +11,15 @@
 </ul>
 
 <div *ngIf="currentImage" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-  <!--
-    Background backdrop, show/hide based on modal state.
-
-    Entering: "ease-out duration-300"
-      From: "opacity-0"
-      To: "opacity-100"
-    Leaving: "ease-in duration-200"
-      From: "opacity-100"
-      To: "opacity-0"
-  -->
-  <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-
-  <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+  <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity cursor-pointer" (click)="currentImage = undefined" aria-hidden="true"></div>
+  <div class="fixed inset-0 z-10 w-screen overflow-y-auto pointer-events-none">
     <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-      <!--
-        Modal panel, show/hide based on modal state.
-
-        Entering: "ease-out duration-300"
-          From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-          To: "opacity-100 translate-y-0 sm:scale-100"
-        Leaving: "ease-in duration-200"
-          From: "opacity-100 translate-y-0 sm:scale-100"
-          To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-      -->
-      <div class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl sm:p-6">
+      <div class="relative transform overflow-hidden rounded-lg bg-black px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl sm:p-6 text-white pointer-events-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-12 h-12 float-right -mt-4 cursor-pointer hover:text-yellow-500" (click)="currentImage = undefined">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
         <img [src]="currentImage.path" alt="Hartmut Müller Kollektion" class="w-full">
-        
+        <p *ngIf="currentImage.name">{{ currentImage.name }}</p>
       </div>
     </div>
   </div>
